@@ -1,12 +1,21 @@
-let character = 'mario';
+//arrays 
+let names=['luigi', 'mario','yoshi'];
 
-let age=30;
+names.push('toad');
+//names[0]=3;
+//can't redfine in an array in ts 
 
-character = 'luigi';
+let numbers=[10,20,30,40];
 
-age =40;
+numbers.push(40);
 
-const circ= (diameter)=>{
-    return diameter * Math.PI;
-}
-console.log(circ(7.5));
+let mixed = ['ken', 4 ,'chun-li' , 8 , 9];
+
+//objects
+let ninja = {
+name:'mario',
+belt : 'black',
+age: 30
+};
+
+ninja.age=40;
