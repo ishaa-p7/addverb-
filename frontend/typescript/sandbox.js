@@ -16,3 +16,5 @@ ninja.age = 40;
 var mixed = [];
 mixed.push('hello');
 mixed.push(20);
+var x;
+x = 25;

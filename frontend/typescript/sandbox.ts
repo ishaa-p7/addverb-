@@ -22,3 +22,7 @@ ninja.age=40;
 let mixed:(string|number)[]=[];
 mixed.push('hello');
 mixed.push(20);
+
+
+let x : any;
+x=25;
