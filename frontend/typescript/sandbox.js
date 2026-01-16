@@ -1,4 +1,8 @@
 var character = 'mario';
-console.log(character);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
+var age = 30;
+character = 'luigi';
+age = 40;
+var circ = function (diameter) {
+    return diameter * Math.PI;
+};
+console.log(circ(7.5));
