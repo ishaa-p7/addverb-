@@ -9,7 +9,7 @@ let numbers=[10,20,30,40];
 
 numbers.push(40);
 
-let mixed = ['ken', 4 ,'chun-li' , 8 , 9];
+let mix = ['ken', 4 ,'chun-li' , 8 , 9];
 
 //objects
 let ninja = {
@@ -19,3 +19,6 @@ age: 30
 };
 
 ninja.age=40;
+let mixed:(string|number)[]=[];
+mixed.push('hello');
+mixed.push(20);
