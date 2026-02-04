@@ -39,4 +39,13 @@ public class Student {
     public void setMarks(int marks) {
         this.marks = marks;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollNo=" + rollNo +
+                ", name='" + name + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
 }
