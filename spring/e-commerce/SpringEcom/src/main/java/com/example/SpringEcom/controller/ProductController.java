@@ -42,7 +42,7 @@ else {
     public ResponseEntity<?> addProduct(@RequestPart Product product,@RequestPart MultipartFile imageFile){
     Product savedProduct = null;
     try {
-        savedProduct = productService.addProduct(product,imageFile);
+        savedProduct = productService.addorUpdateProduct(product,imageFile);
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     } catch (IOException e) {
         return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
@@ -54,6 +54,30 @@ else {
     public ResponseEntity<byte[]> getImage(@PathVariable int productId){
        Product product=productService.getProductById(productId);
        return new ResponseEntity<>(product.getImageData(), HttpStatus.OK);
+}
+
+@PutMapping("/product/{id}")
+    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product, @RequestPart MultipartFile imageFile){
+Product updatedProduct = null;
+try{
+    updatedProduct = productService.addorUpdateProduct(product, imageFile);
+    return new ResponseEntity<>("Updated", HttpStatus.OK);
+}
+catch(IOException e){
+    return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+}
+}
+
+@DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id){
+        Product product=productService.getProductById(id);
+        if(product !=null){
+            productService.deleteProduct(id);
+            return new ResponseEntity<>("Deleted", HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 }
 
 }
