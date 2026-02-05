@@ -1,6 +1,7 @@
 package com.example.SpringEcom.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,9 +22,15 @@ public class Product {
     private String brand;
     private BigDecimal price;
     private String category;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date releaseDate;
     private boolean productAvailable;
     private int stockQuantity;
+private String imageName;
+private String imageType;
+@Lob
+private byte[] imageData;
 
-
+   public Product(int i) {
+   }
 }
